@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/projects";
+import ScrollButton from "./scrollButton";
 
 export default function Home() {
   return (
@@ -18,15 +19,18 @@ export default function Home() {
             dedication to crafting elegant code and creating impactful digital
             experiences.
           </p>
+
           <div className="group">
-            <Link
+            <ScrollButton />
+            {/* <Link
               className="rounded-md border-2 border-stone-300 px-3 py-1 text-xl transition-all ease-in-out hover:border-transparent hover:bg-white hover:text-black"
               href={"#projects"}
             >
               My Work
-            </Link>
+            </Link> */}
+
             <svg
-              className="absolute bottom-16 right-1/2 block translate-x-1/2 opacity-0 group-hover:block group-hover:opacity-100 group-hover:transition-opacity group-hover:delay-150 group-hover:duration-300 group-hover:ease-in-out"
+              className="absolute bottom-16 right-1/2 block translate-x-1/2 opacity-100 group-hover:transition-opacity group-hover:delay-150 group-hover:duration-300 group-hover:ease-in-out lg:opacity-0 lg:group-hover:block lg:group-hover:opacity-100"
               xmlns="http://www.w3.org/2000/svg"
               width="50"
               height="50"
