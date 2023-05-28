@@ -4,7 +4,7 @@ export const projects = [
     description:
       "Frontend containing an interactive worldmap giving you the latest news from the country you choose.",
     img: "/News-Map.png",
-    tech: ["Vite", "React", "Newscatcher"],
+    tech: ["Vite", "React", "NewscatcherAPI"],
     url: "https://newsmap.netlify.app/",
   },
   {

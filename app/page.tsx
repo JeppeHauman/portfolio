@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/projects";
 import ScrollButton from "./scrollButton";
@@ -6,14 +5,14 @@ import ScrollButton from "./scrollButton";
 export default function Home() {
   return (
     <main>
-      <header className="h-screen snap-start bg-[url('/ffflux.svg')] bg-cover bg-center bg-no-repeat text-stone-100">
-        <div className="flex h-full flex-col items-center justify-center gap-20">
-          <h1 className="text-center text-4xl md:text-7xl">
+      <header className="h-screen snap-start bg-neutral-700 bg-[url('/mmmotif.svg')] bg-cover bg-center bg-no-repeat text-stone-100">
+        <div className="flex h-full flex-col items-center justify-center gap-20 ">
+          <h1 className="text-center text-4xl font-bold md:text-7xl">
             Jeppe Hauman
             <br className="my-10" />
             Software Engineer
           </h1>
-          <p className="max-w-md text-center">
+          <p className="max-w-lg border-white border-opacity-50 bg-black bg-opacity-20 p-5 px-5 text-center backdrop-blur-sm sm:rounded-lg sm:border">
             A skilled and passionate software engineer experienced in delivering
             robust and user-centric applications. Explore my work to witness my
             dedication to crafting elegant code and creating impactful digital
@@ -30,7 +29,7 @@ export default function Home() {
             </Link> */}
 
             <svg
-              className="absolute bottom-16 right-1/2 block translate-x-1/2 opacity-100 group-hover:transition-opacity group-hover:delay-150 group-hover:duration-300 group-hover:ease-in-out lg:opacity-0 lg:group-hover:block lg:group-hover:opacity-100"
+              className="absolute bottom-16 right-1/2 hidden translate-x-1/2 group-hover:transition-opacity group-hover:delay-150 group-hover:duration-300 group-hover:ease-in-out lg:block lg:opacity-0 lg:group-hover:block lg:group-hover:opacity-100"
               xmlns="http://www.w3.org/2000/svg"
               width="50"
               height="50"
@@ -38,9 +37,9 @@ export default function Home() {
             >
               <path
                 fill="currentColor"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M12 3.25a.75.75 0 0 1 .75.75v14.19l4.72-4.72a.75.75 0 1 1 1.06 1.06l-6 6a.75.75 0 0 1-1.06 0l-6-6a.75.75 0 1 1 1.06-1.06l4.72 4.72V4a.75.75 0 0 1 .75-.75Z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
           </div>
@@ -48,8 +47,8 @@ export default function Home() {
       </header>
       <div id="projects" className="flex min-h-screen w-full justify-center">
         <div className="grid w-full place-content-center content-center gap-24 p-4 lg:max-w-5xl lg:grid-cols-2 lg:gap-10 lg:p-10">
-          {projects.map((project) => (
-            <div>
+          {projects.map((project, i) => (
+            <div key={i}>
               <div className="relative overflow-hidden rounded-md">
                 <Link
                   target="_blank"
@@ -71,9 +70,17 @@ export default function Home() {
               <p>{project.description}</p>
               <div className="flex gap-2">
                 Tech:
-                {project.tech.map((tech) => (
-                  <img src={`/logos/${tech.toLowerCase()}.svg`} alt={tech} />
-                ))}
+                {project.tech.map((tech, i) =>
+                  tech === "NewscatcherAPI" ? (
+                    <span>NewscatcherAPI</span>
+                  ) : (
+                    <img
+                      key={i}
+                      src={`/logos/${tech.toLowerCase()}.svg`}
+                      alt={tech}
+                    />
+                  )
+                )}
               </div>
             </div>
           ))}
