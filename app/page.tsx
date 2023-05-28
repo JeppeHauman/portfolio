@@ -46,7 +46,7 @@ export default function Home() {
         </div>
       </header>
       <div id="projects" className="flex min-h-screen w-full justify-center">
-        <div className="grid w-full place-content-center content-center gap-24 p-4 lg:max-w-5xl lg:grid-cols-2 lg:gap-10 lg:p-10">
+        <div className="grid w-full place-content-center content-center gap-10 p-4 lg:max-w-5xl lg:grid-cols-2 lg:gap-10 lg:p-10">
           {projects.map((project, i) => (
             <div className="flex flex-col justify-between" key={i}>
               <div className="mb-1 pl-1">
