@@ -10,14 +10,15 @@ export const projects = [
   {
     title: "Reis Celik",
     description:
-      "A website made for the turkish film director Reis Celik, showing his previous work and awards",
+      "A website made for the turkish film director Reis Celik, showing his previous work and awards.",
     img: "/reis-celik.png",
     tech: ["Nextjs", "Tailwindcss", "Typescript"],
     url: "https://reis.vercel.app/",
   },
   {
     title: "Leashes",
-    description: "Fullstack application for an ecommerce selling dog leashes",
+    description:
+      "Fullstack application for an ecommerce selling handmade dog leashes. Site is still in development. TODOs: stripe payment & confirmation of purchase.",
     img: "/Leashes.png",
     tech: ["Nextjs", "Tailwindcss", "Jotai", "Typescript"],
     url: "https://leashes.vercel.app/",

@@ -48,39 +48,44 @@ export default function Home() {
       <div id="projects" className="flex min-h-screen w-full justify-center">
         <div className="grid w-full place-content-center content-center gap-24 p-4 lg:max-w-5xl lg:grid-cols-2 lg:gap-10 lg:p-10">
           {projects.map((project, i) => (
-            <div key={i}>
-              <div className="relative overflow-hidden rounded-md">
-                <Link
-                  target="_blank"
-                  href={project.url}
-                  className="group rounded-md after:rounded-lg after:opacity-0 hover:after:absolute hover:after:right-1/2 hover:after:top-1/2 hover:after:block hover:after:-translate-y-1/2 hover:after:translate-x-1/2 hover:after:border-2 hover:after:px-3 hover:after:py-1 hover:after:opacity-100 hover:after:transition-opacity hover:after:duration-1000 hover:after:ease-in-out hover:after:content-['Visit']"
-                >
-                  <img
-                    className="rounded-md object-cover transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-40 lg:h-64"
-                    src={project.img}
-                    alt={`Screenshot of ${project.title}s website`}
-                  />
+            <div className="flex flex-col justify-between" key={i}>
+              <div className="mb-1 pl-1">
+                <Link href={project.url} target="_blank">
+                  <h3 className="my-2 text-xl underline lg:text-2xl lg:no-underline">
+                    {project.title}
+                  </h3>
                 </Link>
+                <p className="mt-2">{project.description}</p>
               </div>
-              <Link href={project.url} target="_blank">
-                <h3 className="my-2 text-xl underline lg:text-2xl lg:no-underline">
-                  {project.title}
-                </h3>
-              </Link>
-              <p>{project.description}</p>
-              <div className="flex gap-2">
-                Tech:
-                {project.tech.map((tech, i) =>
-                  tech === "NewscatcherAPI" ? (
-                    <span>NewscatcherAPI</span>
-                  ) : (
+              <div>
+                <div className="relative overflow-hidden rounded-md">
+                  <Link
+                    target="_blank"
+                    href={project.url}
+                    className="group rounded-md after:rounded-lg after:opacity-0 hover:after:absolute hover:after:right-1/2 hover:after:top-1/2 hover:after:block hover:after:-translate-y-1/2 hover:after:translate-x-1/2 hover:after:border-2 hover:after:px-3 hover:after:py-1 hover:after:opacity-100 hover:after:transition-opacity hover:after:duration-1000 hover:after:ease-in-out hover:after:content-['Visit']"
+                  >
                     <img
-                      key={i}
-                      src={`/logos/${tech.toLowerCase()}.svg`}
-                      alt={tech}
+                      className="rounded-md object-cover transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:opacity-40 lg:h-64"
+                      src={project.img}
+                      alt={`Screenshot of ${project.title}s website`}
                     />
-                  )
-                )}
+                  </Link>
+                </div>
+                <div className="mt-1 flex items-center gap-2 pl-1">
+                  Tech used:
+                  {project.tech.map((tech, i) =>
+                    tech === "NewscatcherAPI" ? (
+                      <span key={i}>NewscatcherAPI</span>
+                    ) : (
+                      <img
+                        className="max-h-4"
+                        key={i}
+                        src={`/logos/${tech.toLowerCase()}.svg`}
+                        alt={tech}
+                      />
+                    )
+                  )}
+                </div>
               </div>
             </div>
           ))}
