@@ -5,7 +5,7 @@ import ScrollButton from "./scrollButton";
 export default function Home() {
   return (
     <main>
-      <header className="h-screen snap-start bg-neutral-700 bg-[url('/mmmotif.svg')] bg-cover bg-center bg-no-repeat text-stone-100">
+      <header className="h-screen snap-start bg-black bg-[url('/1692022152691.png')] bg-fixed bg-left bg-no-repeat text-stone-100">
         <div className="flex h-full flex-col items-center justify-center gap-20 ">
           <h1 className="text-center text-4xl font-bold md:text-7xl">
             Jeppe Hauman
