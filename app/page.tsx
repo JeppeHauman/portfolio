@@ -73,7 +73,7 @@ export default function Home() {
                 </div>
                 <div className="mt-1 flex items-center gap-2 pl-1">
                   Tech used:
-                  {project.tech.map((tech, i) =>
+                  {project.tech!.map((tech, i) =>
                     tech === "NewscatcherAPI" ? (
                       <span key={i}>NewscatcherAPI</span>
                     ) : (
