@@ -2,7 +2,7 @@ export const projects = [
   {
     title: "MasterChef Event",
     description:
-      "Website for a new subcompany of MasterChef doing events at their studios. Built from the ground up including Sanity CMS.",
+      "Website for a new subcompany of MasterChef doing events at their studios. Built from the ground up using Sveltekit and Sanity CMS.",
     img: "/masterchefevent.png",
     tech: ["Svelte", "Sanity"],
     url: "https://masterchefevent.dk",
